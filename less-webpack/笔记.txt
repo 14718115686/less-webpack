@@ -1,0 +1,55 @@
+Less是css的预处理语言.  css的升级.  浏览器只能识别css.
+需要工具把less转化css.
+1).easy less 插件使用:
+{
+    "editor.fontSize": 20,
+    "editor.tabSize": 2,
+    "window.zoomLevel": 1,
+    "less.compile": {
+        "compress":false,
+        "outExt": ".css",
+        "out": "${workspaceRoot}\\css\\"
+    }
+}
+"compress":false, //是否开启压缩  false 不压缩
+"outExt": ".css", //输出css的文件后缀
+"out": "${workspaceRoot}\\css\\" //输出css路径 当前工作空间下面的css文件夹
+
+2).浏览器里面使用: 要使用server服务器方式打开.否则无效. 了解
+<link rel="stylesheet/less" type="text/css" href="style.less"/> rel href 格式不一样.
+<script src="./less.min.js"></script>
+
+3).webpack 的less-loader使用.
+复制webpack项目.
+只保留一个页面 
+src/templates/index.html
+src/index.js
+config/webpack.config.js 去掉多页面 保留loader 插件 入口
+
+Less语法:
+1.变量
+@变量名称:值;  //声明一个变量
+变量使用:
+    在属性值里面直接调用@变量名称;
+变量插值: @{}
+1).选择器插值  把变量作为选择器名称来用.
+变量可以运算. 可以做运算
+
+2.嵌套  (后代选择器.)
+一个选择器中嵌套另一个选择器，
+这样很大程度减少了代码量，并且代码看起来更加的清晰
+1):
+ul{
+    li{ }
+}
+2):特殊符号 (&) 代表父元素
+3.继承 extend
+把继承的样式 做一个 并集选择器.
+extend 只继承一层. 如果需要多个 可以 多个继承.
+4.混合器 mix
+做一个混合代码. 
+1).在另外选择器里面 引入混合mix
+mix 复制 一份代码到混合位置
+混合器 如果有小括号. 本身不会做保留.
+2).传参
+3).可以作为类似函数来使用.

@@ -1,0 +1,11 @@
+h1,
+h2,
+h3,
+h1::before,
+h2::before,
+h3::before {
+  content: "这是before伪元素";
+  color: #aa0000;
+  width: 800px;
+  background-color: sandybrown;
+}

@@ -1,0 +1,39 @@
+ul {
+  list-style: none;
+  padding: 20px 10px;
+  background-color: seagreen;
+}
+ul li {
+  width: 800px;
+  background-color: sandybrown;
+}
+ul li:hover {
+  font-size: 30px;
+  background-color: sienna;
+}
+.father {
+  width: 150px;
+  height: 150px;
+  background-color: skyblue;
+}
+.father .son {
+  width: 100px;
+  height: 50px;
+  background-color: sienna;
+}
+.grandFath .father .son {
+  width: 50px;
+  height: 50px;
+  background-color: slateblue;
+}
+div div,
+div p,
+div a,
+p div,
+p p,
+p a,
+a div,
+a p,
+a a {
+  color: red;
+}

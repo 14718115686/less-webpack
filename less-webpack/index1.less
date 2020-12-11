@@ -1,0 +1,10 @@
+@color:#FF0000-#550000;// 颜色运算#FF0000
+@w:1000-200px;// 数值运算
+@text:"这是before伪元素";
+@vart:text;
+h1,h2,h3,h1::before,h2::before,h3::before{
+  content:@@vart;
+  color:@color;
+  width:@w;
+  background-color:sandybrown;
+}

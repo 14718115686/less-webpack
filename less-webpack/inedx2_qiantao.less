@@ -1,0 +1,34 @@
+ul{
+  list-style: none;
+  padding:20px 10px;
+  background-color: seagreen;
+  li{
+      width: 800px;
+      background-color: sandybrown;
+      &:hover{//&符号  代表父元素li
+        font-size:30px;
+        background-color: sienna;
+      }
+  }
+}
+
+.father{
+  width:150px;
+  height:150px;
+  background-color: skyblue;
+  .son{
+      width:100px;
+      height:50px;
+      background-color: sienna;
+      .grandFath &{//改变顺序 优先级更高.
+          width:50px;
+          height:50px;
+          background-color: slateblue;
+      }
+  }
+}
+div,p,a{ //并集选择器
+  & &{ //拿到父元素选择器 做组合，组合排列出所有的嵌套可能
+    color:red;
+  }
+}

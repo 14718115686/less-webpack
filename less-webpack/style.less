@@ -1,0 +1,33 @@
+@w:200px;//变量
+div{
+  width:@w;//变量作为css属性的值.
+}
+
+@divname:banner;
+.@{divname}{//把banner作为类选择器的名称.
+  width:500px;
+  color:red;
+}
+#@{divname}{//把banner作为ID选择器的名称.
+  background:red;
+}
+
+@image:"img/product/";//路径变量
+div.bg{
+  background-image: url("@{image}bg.jpg"); //把变量插入路径
+}
+
+@colorstr:color;//变量里面存了一个color
+@topbottom:bottom; //属性插值.
+div.bgs{
+  @{colorstr}:red;//属性插值. 把属性的名称作为变量
+  background-@{colorstr}:blue;
+  border-@{topbottom}-left-radius: 10px;
+  border-@{topbottom}-right-radius: 20px;
+}
+
+@names:'这是before内容';
+@var:names;
+.bg::before{//变量插值  @@var==>@names ==>
+  content:@@var;
+}

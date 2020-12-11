@@ -1,0 +1,33 @@
+.mixi(){
+  width:500px;
+  height:100px;
+  margin:0 auto;
+}
+.bg(@color){
+  background-color: @color;
+}
+.box1{
+  .mixi();
+  .bg(tan);//可以给混合器传参
+}
+.box2{
+  .mixi();
+  .bg(blueviolet);//可以给混合器传参
+}
+
+.mixin(@index) when(@index<6){//when 判断 index小于6
+   // @index作为选择器一部分，用插值方式
+    ul li:nth-child(@{index}){
+      width:50px*@index;
+    }
+    .mixin(@index+1);//自己调用自己
+}
+.mixin(1);//调用了 混合器.
+ul{
+  list-style: none;
+  li{
+    height:20px;
+    background: burlywood;
+    margin: 0 auto;
+  }
+}

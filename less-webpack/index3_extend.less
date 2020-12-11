@@ -1,0 +1,16 @@
+.box{
+  width:800px;
+  height:100px;
+  margin:0 auto;
+  p{
+    font-size:30px;
+    color:red;
+  }
+}
+//extend 只继承一层. 如果需要多个 可以 多个继承.
+.floor1:extend(.box):extend(.box p){//
+  background-color: rgb(163, 163, 167);
+}
+.floor2:extend(.box):extend(.box p){
+  background-color: tan;
+}

@@ -1,0 +1,19 @@
+.box,
+.floor1,
+.floor2 {
+  width: 800px;
+  height: 100px;
+  margin: 0 auto;
+}
+.box p,
+.floor1,
+.floor2 {
+  font-size: 30px;
+  color: red;
+}
+.floor1 {
+  background-color: #a3a3a7;
+}
+.floor2 {
+  background-color: tan;
+}
